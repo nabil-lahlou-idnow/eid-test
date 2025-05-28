@@ -1,0 +1,200 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name IDnowEID
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+import AVFoundation
+import AuthadaAuthenticationLibrary
+import Combine
+import CoreNFC
+import DeveloperToolsSupport
+import Foundation
+@_exported import IDnowEID
+import Lottie
+import Swift
+import SwiftUI
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+public enum IDnowSans {
+  public static let medium: IDnowEID.IDnowFontConvertible
+  public static let regular: IDnowEID.IDnowFontConvertible
+}
+public enum EIDError {
+  case aborted(reason: Swift.String)
+  case networkError
+  case nfcNotAvailable
+  case invalidToken
+  case tokenAlreadyCompleted
+  case internalError
+  case cardBlocked
+  case cardDeactivated
+  case invalidCard
+  case sessionTimeout
+}
+extension IDnowEID.EIDError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct IDnowFont {
+  public init(fontFamily: IDnowEID.IDnowFontFamily = IDnowFontFamily(), fontSize: IDnowEID.IDnowFontSize = IDnowFontSize(), fontWeight: IDnowEID.IDnowFontWeight = IDnowFontWeight())
+}
+public struct IDnowPrimitives {
+  public init(colors: IDnowEID.IDnowColors = IDnowColors(), radius: IDnowEID.IDnowRadius = IDnowRadius(), spacing: IDnowEID.IDnowSpacing = IDnowSpacing(), font: IDnowEID.IDnowFont = IDnowFont())
+}
+@_hasMissingDesignatedInitializers public class EIDSdk {
+  public static let shared: IDnowEID.EIDSdk
+  public func start(presentationViewController: UIKit.UIViewController, token: Swift.String, config: IDnowEID.EIDConfig, callback: any IDnowEID.EIDCallback)
+  @objc deinit
+}
+public enum IDnowRadiusToken : Swift.String {
+  case radiusSm
+  case radiusMd
+  case radiusLg
+  case radiusFull
+  public func getValue() -> CoreFoundation.CGFloat
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct IDnowFontConvertible {
+  public let name: Swift.String
+  public let family: Swift.String
+  public let path: Swift.String
+  public static let defaultSize: CoreFoundation.CGFloat
+  public func font(size: CoreFoundation.CGFloat = IDnowFontConvertible.defaultSize) -> UIKit.UIFont
+}
+extension UIKit.UIFont {
+  convenience public init?(font: IDnowEID.IDnowFontConvertible, size: CoreFoundation.CGFloat)
+}
+public class IDnowRadius {
+  public init(radius1: CoreFoundation.CGFloat? = nil, radius2: CoreFoundation.CGFloat? = nil, radius3: CoreFoundation.CGFloat? = nil, radius4: CoreFoundation.CGFloat? = nil)
+  @objc deinit
+}
+public enum IDnowSpacingToken : Swift.String {
+  case noSpacing
+  case spacingXs
+  case spacingSm
+  case spacingMd
+  case spacingLg
+  case spacingXl
+  case spacing2xl
+  case spacing3xl
+  public func getValue() -> CoreFoundation.CGFloat
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct IDnowFontFamily {
+  public init(heading: [Swift.Int : UIKit.UIFont] = DefaultPrimitives.heading, content: [Swift.Int : UIKit.UIFont] = DefaultPrimitives.content)
+}
+public protocol EIDCallback {
+  func onSuccess()
+  func onFailure(error: IDnowEID.EIDError)
+}
+public typealias EIDSuccessHandler = () -> Swift.Void
+public typealias EIDFailureHandler = (IDnowEID.EIDError) -> Swift.Void
+public struct BrandColors {
+  public init(primary: UIKit.UIColor? = nil, primaryVariant: UIKit.UIColor? = nil, secondary: UIKit.UIColor? = nil, secondaryVariant: UIKit.UIColor? = nil, error: UIKit.UIColor? = nil, processing: UIKit.UIColor? = nil, success: UIKit.UIColor? = nil, active: UIKit.UIColor? = nil)
+}
+public enum DefaultPrimitives {
+  public static let primary: UIKit.UIColor
+  public static let primaryVariant: UIKit.UIColor
+  public static let secondary: UIKit.UIColor
+  public static let secondaryVariant: UIKit.UIColor
+  public static let error: UIKit.UIColor
+  public static let processing: UIKit.UIColor
+  public static let success: UIKit.UIColor
+  public static let active: UIKit.UIColor
+  public static let recording: UIKit.UIColor
+  public static let grey100: UIKit.UIColor
+  public static let grey200: UIKit.UIColor
+  public static let grey300: UIKit.UIColor
+  public static let grey400: UIKit.UIColor
+  public static let grey500: UIKit.UIColor
+  public static let grey600: UIKit.UIColor
+  public static let grey800: UIKit.UIColor
+  public static let grey900: UIKit.UIColor
+  public static let radius1: CoreFoundation.CGFloat
+  public static let radius2: CoreFoundation.CGFloat
+  public static let radius3: CoreFoundation.CGFloat
+  public static let radius4: CoreFoundation.CGFloat
+  public static let spacing0_5: CoreFoundation.CGFloat
+  public static let spacing1: CoreFoundation.CGFloat
+  public static let spacing2: CoreFoundation.CGFloat
+  public static let spacing3: CoreFoundation.CGFloat
+  public static let spacing4: CoreFoundation.CGFloat
+  public static let spacing5: CoreFoundation.CGFloat
+  public static let spacing6: CoreFoundation.CGFloat
+  public static let remMultiplier: CoreFoundation.CGFloat
+  public static let fontSize000: CoreFoundation.CGFloat
+  public static let fontSize00: CoreFoundation.CGFloat
+  public static let fontSize0: CoreFoundation.CGFloat
+  public static let fontSize1: CoreFoundation.CGFloat
+  public static let fontSize2: CoreFoundation.CGFloat
+  public static let fontSize3: CoreFoundation.CGFloat
+  public static let fontSize4: CoreFoundation.CGFloat
+  public static let fontSize5: CoreFoundation.CGFloat
+  public static let fontSize6: CoreFoundation.CGFloat
+  public static let regular: Swift.Int
+  public static let medium: Swift.Int
+  public static let heading: [Swift.Int : UIKit.UIFont]
+  public static let content: [Swift.Int : UIKit.UIFont]
+  public static let xSmallIcon: CoreFoundation.CGFloat
+  public static let smallIcon: CoreFoundation.CGFloat
+  public static let mediumIcon: CoreFoundation.CGFloat
+}
+public struct IDnowFontSize {
+  public let fontSize000: CoreFoundation.CGFloat
+  public let fontSize00: CoreFoundation.CGFloat
+  public let fontSize0: CoreFoundation.CGFloat
+  public let fontSize1: CoreFoundation.CGFloat
+  public let fontSize2: CoreFoundation.CGFloat
+  public let fontSize3: CoreFoundation.CGFloat
+  public let fontSize4: CoreFoundation.CGFloat
+  public let fontSize5: CoreFoundation.CGFloat
+  public let fontSize6: CoreFoundation.CGFloat
+  public init(fontSize000: CoreFoundation.CGFloat = DefaultPrimitives.fontSize000, fontSize00: CoreFoundation.CGFloat = DefaultPrimitives.fontSize00, fontSize0: CoreFoundation.CGFloat = DefaultPrimitives.fontSize0, fontSize1: CoreFoundation.CGFloat = DefaultPrimitives.fontSize1, fontSize2: CoreFoundation.CGFloat = DefaultPrimitives.fontSize2, fontSize3: CoreFoundation.CGFloat = DefaultPrimitives.fontSize3, fontSize4: CoreFoundation.CGFloat = DefaultPrimitives.fontSize4, fontSize5: CoreFoundation.CGFloat = DefaultPrimitives.fontSize5, fontSize6: CoreFoundation.CGFloat = DefaultPrimitives.fontSize6)
+}
+@_hasMissingDesignatedInitializers final public class EIDConfig {
+  public class Builder {
+    public func setShowTermsAndConditions(_ show: Swift.Bool) -> IDnowEID.EIDConfig.Builder
+    public init()
+    public func setPreferredLanguage(_ language: Swift.String) -> IDnowEID.EIDConfig.Builder
+    public func setUIPreferences(_ uiPreferences: IDnowEID.IDnowPrimitives) -> IDnowEID.EIDConfig.Builder
+    public func build() throws -> IDnowEID.EIDConfig
+    @objc deinit
+  }
+  @objc deinit
+}
+public struct IDnowSpacing {
+  public init(spacing0_5: CoreFoundation.CGFloat? = nil, spacing1: CoreFoundation.CGFloat? = nil, spacing2: CoreFoundation.CGFloat? = nil, spacing3: CoreFoundation.CGFloat? = nil, spacing4: CoreFoundation.CGFloat? = nil, spacing5: CoreFoundation.CGFloat? = nil, spacing6: CoreFoundation.CGFloat? = nil)
+}
+public struct GreyColors {
+  public init(grey100: UIKit.UIColor? = nil, grey200: UIKit.UIColor? = nil, grey300: UIKit.UIColor? = nil, grey400: UIKit.UIColor? = nil, grey500: UIKit.UIColor? = nil, grey600: UIKit.UIColor? = nil, grey800: UIKit.UIColor? = nil, grey900: UIKit.UIColor? = nil)
+}
+public struct IDnowFontWeight {
+  public let regular: Swift.Int
+  public let medium: Swift.Int
+  public init(regular: Swift.Int = DefaultPrimitives.regular, medium: Swift.Int = DefaultPrimitives.medium)
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open func handleAppearanceChange(isLightMode: Swift.Bool)
+}
+public class IDnowColors {
+  public init(brand: IDnowEID.BrandColors = BrandColors(), grey: IDnowEID.GreyColors = GreyColors())
+  @objc deinit
+}
+extension IDnowEID.IDnowRadiusToken : Swift.Equatable {}
+extension IDnowEID.IDnowRadiusToken : Swift.Hashable {}
+extension IDnowEID.IDnowRadiusToken : Swift.RawRepresentable {}
+extension IDnowEID.IDnowSpacingToken : Swift.Equatable {}
+extension IDnowEID.IDnowSpacingToken : Swift.Hashable {}
+extension IDnowEID.IDnowSpacingToken : Swift.RawRepresentable {}
