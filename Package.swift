@@ -28,18 +28,18 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "IDnowEID",
-            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/1.0.3/IDnowEID.xcframework.zip",
-            checksum: "f5fc2cc0262a8cf01698084a20956ebfa372b96294b0e0c1b598d045aecb8e67"
+            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/1.0.4/IDnowEID.xcframework.zip",
+            checksum: "e723fc19003c1457eea0f40214a5dfb2f67a6e2e6a13ab9ee0c530fb8c1364ad"
         ),
         .binaryTarget(
             name: "IDnowEIDDynamic",
-            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/1.0.3/IDnowEIDDynamic.xcframework.zip",
-            checksum: "191111d6f74fc94afb2849e9af2b49511e700ebc946d87cc47beb4278955fb9e"
+            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/1.0.4/IDnowEIDDynamic.xcframework.zip",
+            checksum: "bc3db91d8c2b289c44fbd854d2e6bedc6a51bc310d422a860c3032eba4e3b366"
         ),
         .binaryTarget(
             name: "IDnowEIDGovernikus",
-            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/1.0.3/IDnowEIDGovernikus.xcframework.zip",
-            checksum: "a195fe36b620ffc009d3a29641f28a8cd4b4190ed24c88bcaac7e1cc6dd2e565"
+            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/1.0.4/IDnowEIDGovernikus.xcframework.zip",
+            checksum: "1506683a30a030a70f12d3f0f3868b1d4741ebce525fd8e1b0bd44398532acbe"
         ),
         .target(
             name: "IDnowEIDDynamicWrapper",
