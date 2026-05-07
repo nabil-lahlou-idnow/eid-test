@@ -28,17 +28,17 @@ let package = Package(
         .binaryTarget(
             name: "IDnowEID",
             url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/100.0.1/IDnowEID.xcframework.zip",
-            checksum: "2b726dc6f223343237ef8d50068d9b2cfd09d21165605a5114a1a61d4b61db2d"
+            checksum: "c1589fbcb0b6a39fc10f2d25a0fdbb7e09f7666c1d9d042acc8a025d99e883a3"
         ),
         .binaryTarget(
             name: "IDnowEIDDynamic",
             url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/100.0.1/IDnowEIDDynamic.xcframework.zip",
-            checksum: "266874f6400af47d702daf0c0159ca9b70fc47d6a3bbc105467b5dfda5cb95e6"
+            checksum: "91752a84b938560ccd1e0b354491745e0c677c821cd9982f9eeaea73c7d44c73"
         ),
         .binaryTarget(
             name: "IDnowEIDGovernikus",
             url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/100.0.1/IDnowEIDGovernikus.xcframework.zip",
-            checksum: "9145011b71736ec67868bc18544e59101cd869ae2af31e186cadbf80ce62d940"
+            checksum: "0240adebcba833c9cba89a6143f88f2f80467ab0c2c66baaf7caee61f412c335"
         ),
         .binaryTarget(
             name: "OpenSSL",
