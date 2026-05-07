@@ -21,24 +21,24 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "2.1.8"),
+        .package(url: "https://github.com/idnow/sunflower-sdk-ios.git", exact: "2.1.10"),
         .package(url: "https://github.com/Governikus/AusweisApp2-SDK-iOS.git", exact: "2.2.2")
     ],
     targets: [
         .binaryTarget(
             name: "IDnowEID",
-            url: "https://github.com/idnow/eid-sdk-ios/releases/download/1.3.4/IDnowEID.xcframework.zip",
-            checksum: "2e3eeb5a9e982962ca29824599d0e21018e11384388f22404d96151ce5063853"
+            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/100.0.1/IDnowEID.xcframework.zip",
+            checksum: "2b726dc6f223343237ef8d50068d9b2cfd09d21165605a5114a1a61d4b61db2d"
         ),
         .binaryTarget(
             name: "IDnowEIDDynamic",
-            url: "https://github.com/idnow/eid-sdk-ios/releases/download/1.3.4/IDnowEIDDynamic.xcframework.zip",
-            checksum: "0d2675b99f73811dd6d660b41100e8552969c3133bbe82b41fd2428614ec4a9e"
+            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/100.0.1/IDnowEIDDynamic.xcframework.zip",
+            checksum: "266874f6400af47d702daf0c0159ca9b70fc47d6a3bbc105467b5dfda5cb95e6"
         ),
         .binaryTarget(
             name: "IDnowEIDGovernikus",
-            url: "https://github.com/idnow/eid-sdk-ios/releases/download/1.3.4/IDnowEIDGovernikus.xcframework.zip",
-            checksum: "4321a814b4942acdcaf14dd3ba5a4700b62dab744de4b556bf566d6c00670e5c"
+            url: "https://github.com/nabil-lahlou-idnow/eid-test/releases/download/100.0.1/IDnowEIDGovernikus.xcframework.zip",
+            checksum: "9145011b71736ec67868bc18544e59101cd869ae2af31e186cadbf80ce62d940"
         ),
         .binaryTarget(
             name: "OpenSSL",
